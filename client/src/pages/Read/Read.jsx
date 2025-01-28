@@ -1,15 +1,26 @@
 import { NavLink } from "react-router";
 import "./Read.css";
 import Layout from "../../components/layout/Layout";
+import { useEffect, useState } from "react";
 
 export default function Read() {
+  const [bookData, setBookData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/books")
+      .then((res) => res.json())
+      .then(data => {
+        setBookData(data.data);
+      });
+  });
+
   return (
     <>
       <Layout>
         <div className="read-top">
           <h1>Books</h1>
-          <NavLink to="/create">
-            <button>Add Book</button>
+          <NavLink to="/create" className="add-book-btn">
+            Add Book
           </NavLink>
         </div>
 
@@ -27,17 +38,19 @@ export default function Read() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            {bookData.map((book, key) => (
+              <tr key={key}>
+              <td>{book.title}</td>
+              <td>{book.author}</td>
+              <td>{book.genre}</td>
+              <td>{book['published year']}</td>
+              <td>{book.description}</td>
               <td className="option-buttons">
                 <button>Edit</button>
                 <button>Delete</button>
               </td>
             </tr>
+            ))}
           </tbody>
         </table>
       </Layout>

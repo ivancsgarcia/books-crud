@@ -1,7 +1,3 @@
-label {
-    font-size: 1.2rem;
-}
-
 .title {
     margin-bottom: 1rem;
 }
@@ -9,4 +5,10 @@ label {
 .desc {
     display: block;
     width: 100%;
+    margin-bottom: 1rem;
+}
+
+.save-btn {
+    display: block;
+    margin: auto;
 }

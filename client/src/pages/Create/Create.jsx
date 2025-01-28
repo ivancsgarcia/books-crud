@@ -23,7 +23,7 @@ export default function Create() {
           <label>Description</label>
           <textarea className="desc" rows={5} placeholder="The adventure of Bilbo Baggins as he embarks on a journey to reclaim a lost treasure guarded by a dragon."></textarea>
 
-          <button>Save Book</button>
+          <button className="save-btn">Save Book</button>
         </form>
       </Layout>
     </>
