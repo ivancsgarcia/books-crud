@@ -1,0 +1,12 @@
+label {
+    font-size: 1.2rem;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.desc {
+    display: block;
+    width: 100%;
+}

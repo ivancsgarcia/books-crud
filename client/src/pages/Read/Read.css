@@ -1,0 +1,43 @@
+.read-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+thead {
+    background-color: lightskyblue;
+}
+
+th, td {
+    padding: .5rem;
+}
+
+table .option-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    border: none;
+}
+
+button {
+    padding: 5px 1rem;
+}
