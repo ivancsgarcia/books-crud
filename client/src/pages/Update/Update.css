@@ -1,0 +1,14 @@
+.title {
+    margin-bottom: 1rem;
+}
+
+.desc {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.save-btn {
+    display: block;
+    margin: auto;
+}

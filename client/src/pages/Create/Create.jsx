@@ -1,7 +1,20 @@
+import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import './Create.css'
 
 export default function Create() {
+  const [formValues, setFormValues] = useState({
+    title: "",
+    author: "",
+    genre: "",
+    yearPublished: "",
+    description: ""
+  })
+
+  const addBook = () => {
+    axios.post()
+  }
+
   return (
     <>
       <Layout>

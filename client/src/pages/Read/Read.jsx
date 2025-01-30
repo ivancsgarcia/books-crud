@@ -2,16 +2,27 @@ import { NavLink } from "react-router";
 import "./Read.css";
 import Layout from "../../components/layout/Layout";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Read() {
   const [bookData, setBookData] = useState([]);
 
+  const getBooks = async () => {
+    const response = await axios.get("http://localhost:3000/books");
+    const data = response.data.data
+    setBookData(data)
+  };
+
+  const updateBook = () => {
+
+  }
+
+  const deleteBook = () => {
+    axios.delete("http://localhost:3000/books/")
+  };
+
   useEffect(() => {
-    fetch("http://localhost:3000/books")
-      .then((res) => res.json())
-      .then(data => {
-        setBookData(data.data);
-      });
+    getBooks()
   });
 
   return (
@@ -40,16 +51,16 @@ export default function Read() {
           <tbody>
             {bookData.map((book, key) => (
               <tr key={key}>
-              <td>{book.title}</td>
-              <td>{book.author}</td>
-              <td>{book.genre}</td>
-              <td>{book['published year']}</td>
-              <td>{book.description}</td>
-              <td className="option-buttons">
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
+                <td>{book.title}</td>
+                <td>{book.author}</td>
+                <td>{book.genre}</td>
+                <td>{book.yearPublished}</td>
+                <td>{book.description}</td>
+                <td className="option-buttons">
+                  <button onClick={updateBook}>Edit</button>
+                  <button onClick={deleteBook}>Delete</button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>

@@ -4,8 +4,8 @@ const BookController = require("../controllers/Book");
 const Router = useRouter();
 
 Router.get("/", BookController.getBooks);
-// Router.post('/', BookController.)
-// Router.put('/:id', BookController.)
-// Router.delete('/:id', BookController.)
+Router.post('/', BookController.addBook)
+Router.patch('/:id', BookController.updateBook)
+Router.delete('/:id', BookController.deleteBook)
 
 module.exports = Router;
